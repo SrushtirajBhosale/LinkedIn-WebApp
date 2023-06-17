@@ -37,7 +37,7 @@ const Rightside = (props) => {
       </FollowCard>
       <BannerCard>
         <img
-          src="/images/rightside-bannercard.jpg"
+          src="/images/rightside-banner.png"
           alt=""
         />
       </BannerCard>

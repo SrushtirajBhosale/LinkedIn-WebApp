@@ -2,9 +2,22 @@ import styled  from "styled-components";
 import Leftside from './Leftside';
 import Main from './Main';
 import Rightside from './Rightside';
+import { useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { useEffect } from "react";
+
 
 const Home = (props) => {
-  return (<Container>
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!props.user) {
+      navigate('/')
+    }
+  }, [!props.user])
+  
+
+  return (
+    <Container>
     <Section>
       <h5>
         <a>Hiring in a hurry? - </a>
@@ -65,13 +78,18 @@ const Layout = styled.div`
   grid-template-columns: minmax(0, 5fr) minmax(0, 12fr) minmax(300px, 7fr);
   column-gap: 25px;
   row-gap: 25px;
-  /* grid-template-row: auto; */
   margin: 25px 0;
   @media (max-width: 768px) {
     display: flex;
+    grid-template-row: auto;
     flex-direction: column;
     padding: 0 5px;
   }
 `;
 
-export default Home;
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+  }
+}
+export default connect(mapStateToProps)(Home);

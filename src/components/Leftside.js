@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { connect } from 'react-redux';
+
 
 const Leftside = (props) => {
   return (
@@ -6,10 +8,18 @@ const Leftside = (props) => {
       <ArtCard>
         <UserInfo>
           <CardBackground />
+
+          <UserProfile>
           <a>
-            <Photo />
-            <Link>Welcome, there!</Link>
+          { props.user && props.user.photoURL ? (
+          <img src={props.user.photoURL} alt=""/>
+          ) : (
+          <Photo />
+          )}
+            <Link>Welcome, {props.user ? props.user.displayName : 'there'}!</Link>
           </a>
+          </UserProfile>
+
           <a>
             <AddPhotoText>Add a photo</AddPhotoText>
           </a>
@@ -83,6 +93,23 @@ const CardBackground = styled.div`
   margin: -12px -12px 0;
 `;
 
+const UserProfile = styled.div`
+  img {
+  width: 72px;
+  height: 72px;
+  box-sizing: border-box;
+  background-clip: content-box;
+  background-color: white;
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  margin: -38px auto 12px;
+  border-radius: 50%;
+  }
+`;
+
+
 const Photo = styled.div`
   box-shadow: none;
   background-image: url("/images/photo.svg");
@@ -98,6 +125,7 @@ const Photo = styled.div`
   margin: -38px auto 12px;
   border-radius: 50%;
 `;
+
 
 const Link = styled.div`
   font-size: 16px;
@@ -196,4 +224,9 @@ const CommunityCard = styled(ArtCard)`
   }
 `;
 
-export default Leftside;
+const mapStateToProps = (state) => {
+  return {
+    user: state.userState.user,
+  }
+}
+export default connect(mapStateToProps)(Leftside);
