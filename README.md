@@ -1,8 +1,9 @@
-<h1>LinkedIn WebApp</h1>
-<h2>
-Tried to clone LinkedIn using React JS, Redux & Firebase.
+<h1 align="center">LinkedIn WebApp</h1>
+<h2 align="center">
+Tried to clone LinkedIn using <em> React JS, Redux & Firebase.</em>
 <br />
-Also Explored styled-components(React JS library) for styling.
+<br />
+Also Explored <em> styled-components(React JS library)</em> for styling.
 </h2>
 <h3 align="center">
   Live App
