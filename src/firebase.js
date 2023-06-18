@@ -4,13 +4,14 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB7vWVWehcvsWZOuoIDrig-BXz5mFJtLGY",
-  authDomain: "linkedin-2d891.firebaseapp.com",
-  projectId: "linkedin-2d891",
-  storageBucket: "linkedin-2d891.appspot.com",
-  messagingSenderId: "942820387286",
-  appId: "1:942820387286:web:9fa24964d93f5731641c77",
-  measurementId: "G-QEK672YD0P"
+  apiKey: "AIzaSyA2WasmWmOCrLI0ZV4u4ENhfbyUeYZFYiY",
+  authDomain: "linked-n-eae5a.firebaseapp.com",
+  databaseURL: "https://linked-n-eae5a-default-rtdb.firebaseio.com",
+  projectId: "linked-n-eae5a",
+  storageBucket: "linked-n-eae5a.appspot.com",
+  messagingSenderId: "1169066772",
+  appId: "1:1169066772:web:27bed66a361ce069761001",
+  measurementId: "G-9MT3RWV19X"
 };
 
 const app = initializeApp(firebaseConfig);
