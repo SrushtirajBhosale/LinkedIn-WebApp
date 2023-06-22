@@ -8,7 +8,7 @@ Also Explored <em> styled-components(React JS library)</em> for styling.
 <h3 align="center">
   Live Application🚀
   <br/>
-  <a href= "https://linked-n-eae5a.web.app/" target="_blank" rel="noreferrer">
+  <a href= "https://social-group-f2030.web.app/" target="_blank" rel="noreferrer">
     LinkedIn-WebApp
   </a>
 </h3>
