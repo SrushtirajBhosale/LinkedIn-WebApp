@@ -19,7 +19,7 @@ const Login = (props) => {
                 </a>
                 <div>
                     <Join>Join now</Join>
-                    <SignIn>Sign in</SignIn>
+                    <SignIn onClick={() => props.signIn()}>Sign in</SignIn>
                 </div>
             </Nav>
             <Section>
@@ -30,7 +30,8 @@ const Login = (props) => {
               <Form>
                 <Google onClick={() => props.signIn()}>
                   <img src="/images/google.svg" alt="" />
-                  Sing in with Google
+                  <span>Sign in with Google</span>
+                    
                 </Google>
               </Form>
             </Section>
@@ -79,6 +80,7 @@ const SignIn = styled.a`
   box-shadow: inset 0 0 0 1px #0a66c2;
   color: #0a66c2;
   border-radius: 24px;
+  cursor: pointer;
   transition-duration: 167ms;
   font-size: 16px;
   font-weight:600;
@@ -166,6 +168,7 @@ const Google = styled.button`
   border-radius: 28px;
   vertical-align: middle;
   z-index: 0;
+  cursor: pointer;
   transition-duration: 167ms;
   font-size: 20px;
   color: rgba(0, 0, 0, 0.6);
@@ -173,6 +176,10 @@ const Google = styled.button`
     background-color: rgba(207, 207, 207, 0.25);
     color: rgba(0, 0, 0, 0.75)
   }
+  & > img {
+    padding-right: 10px;
+  }
+
 `;
 
 const mapStateToProps = (state) => {

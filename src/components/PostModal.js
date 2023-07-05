@@ -63,7 +63,7 @@ const PostModal = (props) => {
         <Container>
         <Content>
           <Header>
-          <h2>create post</h2>
+          <h2>Create post</h2>
           <button onClick={(event) => reset(event)}>
             <img src="/images/close-icon.svg" alt="" />
           </button>
@@ -95,9 +95,9 @@ const PostModal = (props) => {
                 />
                 <p>
                   <label htmlFor="file"
-                      style={{cursor: "pointer"}}
+                      style={{cursor: "pointer", color: '#0a66c2'}}
                   >
-                      Select an image to share
+                      Select image to share
                   </label>
                 </p>
                   {shareImage && <img src={URL.createObjectURL(shareImage)} alt=""/>}
@@ -105,8 +105,12 @@ const PostModal = (props) => {
                   :
                   assetArea === "media" && (
                     <>
+                      <p style={{textAlign: 'center', color: '#0a66c2'}}>
+                        
+                      <label>Input video link to share</label>
+                      </p>
                       <input type="text"
-                          placeholder="please input a video link"
+                          placeholder="Paste here.."
                           value={videoLink}
                           onChange={(e) => setVideoLink(e.target.value)}
                       />
@@ -187,6 +191,13 @@ button {
     max-width: 40px;
     color: rgba(0, 0, 0, 0.15);
     min-width: auto;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: white;
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
     svg, img {
         pointer-events: none;
     }
@@ -215,8 +226,9 @@ svg, img {
     border-radius: 50%;
 }
 span {
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
     line-height: 1.5;
     margin-left: 5px;
 }
@@ -269,6 +281,7 @@ background: ${(props) => props.disabled ? 'rgba(0, 0, 0, 0.3)' :  '#0a66c2' };
 color: ${(props) => props.disabled ? 'rgba(1, 1, 1, 0.2)' :  'white' };
 &:hover {
     background: ${(props) => props.disabled ? 'rgba(0, 0, 0, 0.05)' :  '#004182' };
+    cursor: ${(props) => props.disabled ? 'no-drop' :  'pointer' };
 }
 `;
 
@@ -277,6 +290,8 @@ padding: 12px 24px;
 textarea {
     width: 100%;
     min-height: 100px;
+    font-size: 16px;
+    font-family: apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
     resize: none;
 }
 input {

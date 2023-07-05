@@ -168,8 +168,8 @@ const ShareBox = styled(CommonCard)`
       border: none;
       display: flex;
       align-items: center;
-      font-weight: 600;
-      font-family: sans-serif;
+      font-weight: 500;
+      font-family: apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif;
     }
     &:first-child {
       display: flex;
@@ -184,10 +184,14 @@ const ShareBox = styled(CommonCard)`
         margin: 4px 0;
         flex-grow: 1;
         border-radius: 35px;
+        cursor: pointer;
         padding-left: 16px;
         border: 1px solid rgba(0, 0, 0, 0.15);
         background-color: white;
         text-align: left;
+        &:hover {
+        background-color: rgba(207, 207, 207, 0.25);
+        }
       }
     }
     &:nth-child(2) {
@@ -202,7 +206,7 @@ const ShareBox = styled(CommonCard)`
           width: 48px;
         }
         span {
-          color: #78b5f9;
+          color: rgba(0,0,0,0.5);
         }
       }
     }
